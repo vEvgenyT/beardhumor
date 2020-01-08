@@ -1,4 +1,44 @@
-.logo_size {
-  width: 100px;
-  height: 100px;
+/*
+joke
+joke_font-style
+joke__text
+
+
+font-family: 'Oswald', sans-serif;
+font-family: 'IBM Plex Sans', sans-serif;
+*/
+
+
+.joke_font-style {
+  font: normal 400 24px/32px 'Oswald', sans-serif;
+  text-align: center;
 }
+
+.joke_size {
+  max-width: 400px;
+}
+
+button {
+  /*background: none;*/
+  background-color: transparent;
+  border: none;
+}
+
+button:hover {
+  transform: rotate(-720deg);
+  /*border: 2px;*/
+}
+
+
+@media only screen and (min-width: 768px) {
+  .joke_font-style {
+    font: normal 400 60px/64px 'Oswald', sans-serif;
+    text-align: center;
+  }
+  .joke_size {
+    max-width: 656px;
+    max-height: 395px;
+    overflow: hidden;
+}
+}
+
