@@ -7,11 +7,14 @@
 .logo_size {
   width: 100px;
   height: 100px;
+  margin: 12px 0 0;
 }
 
 .header {
   display: flex;
   justify-content: center;
+  outline: none;
+  outline-offset: none;
 }
 
 /*----ITEMS------*/
@@ -31,7 +34,7 @@ color: #242424;
   display: flex;
   width: 128px;
   height: 100px;
-  margin: 0;
+  margin: 12px 0 0;
   padding: 0;
   justify-content: space-around;
   -ms-align-items: flex-end;
@@ -90,42 +93,110 @@ color: #242424;
   font:normal 400 24px/32px Oswald,sans-serif;
   text-align:center
 }
+
 .joke_size {
-  max-width:400px
+   max-width:400px;
+   height: 176px;
+   overflow: hidden;
 }
+
+.joke__text_size {
+  height: 128px;
+  margin: 0;
+}
+
+.joke__btn_size {
+  width: 29.03px;
+  height: 32px;
+}
+
+.joke__btn_position {
+  margin: 12px 0 0;
+}
+
+.joke__btn_style:focus {
+  outline: none;
+  outline-offset: none;
+}
+
 button {
   background:transparent;
   border:none;
 }
 
+.joke__text_position {
+  margin: 0 5px;
+  text-align: center;
+}
 
-@media only screen and (min-width:768px) {
+.joke_position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 77vh;
+}
+
+@media only screen and (min-width:650px) {
 .joke_font-style {
   font:normal 400 60px/64px Oswald,sans-serif;
   text-align:center;
 }
 
 .joke_size {
-  max-height:328px;
+  height:332px;
   max-width:656px;
   overflow:hidden;
-  }
 }
 
-.joke__text_position {
-
+.joke__text_size {
+  height: 272px;
+  margin: 0;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 65vh;
+.joke__btn_position {
+  margin: 24px 0 0;
+}
 }
 /*-------------------------------*/
 
 
+@media (max-height: 414px) and (max-width: 823px) and (orientation: landscape) {
+  html {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  .header, .joke_position {
+    display: none;
+  }
+  .footer::before {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    bottom: 400%;
+    content: "В альбомной ориентации не работает   :(";
+    text-align: center;
+    font:normal 400 24px/32px Oswald,sans-serif;
+  }
+}
 
+@media (max-height: 550px) and (max-width: 5000px) and (orientation: landscape) {
+  html {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  .header, .joke_position {
+    display: none;
+  }
+  .footer::before {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    bottom: 400%;
+    content: "Увеличьте высоту окна браузера";
+    text-align: center;
+    font:normal 400 24px/32px Oswald,sans-serif;
+  }
+}
 
 
 
