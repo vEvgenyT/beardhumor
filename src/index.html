@@ -5,9 +5,9 @@
     <!-- For browsers -->
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Cache-Control" content="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="Cache-Control" content="no-cache"> -->
     <!-- <meta http-equiv="cleartype" content="on">
     <meta http-equiv="imagetoolbar" content="no">
     <meta http-equiv="msthemecompatible" content="no"> -->
@@ -15,9 +15,10 @@
 
     <!-- General -->
 
-    <title>Beard humor</title>
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Oswald&display=swap&subset=cyrillic" rel="stylesheet">
+    <title>Beard Humor</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     <link rel="canonical" href="#">
     <!-- <base href="#"> -->
     <meta name="robots" content="notranslate">
@@ -37,6 +38,25 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="beard">
     <meta name="msapplication-tooltip" content="юмор и настроение">
+
+    <!-- Facebook -->
+
+    <meta property="og:title" content="Beard Humor">
+    <meta property="og:description" content="анекдоты, цитаты, юмор, настроение">
+    <meta property="og:url" content="#">
+    <meta property="og:site_name" content="beard humor">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru-UA">
+    <meta property="og:image" content="#">
+
+    <!-- Twitter -->
+
+    <meta name="twitter:site" content="#">
+    <meta name="twitter:creator" content="beardhumor.com.ua">
+    <meta name="twitter:title" content="beard humor">
+    <meta name="twitter:description" content="анекдоты, цитаты, юмор, настроение">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="#">
 
     <!-- Favicon -->
 
@@ -65,36 +85,38 @@
     <noscript>
       <strong>We're sorry but template doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <header class="header">
+    <header class="header_style">
       <ul class="items_style items_position">
         <li class="items_font-style">анекдоты</li>
         <li class="items_font-style">цитаты</li>
       </ul>
-      <a href="#"><img src="img/logotype.svg" alt="Логотип в виде очков и элегантной бороды" class="logo_size"></a>
+      <a href="#"><img src="img/logotype.svg" alt="Логотип в виде очков и элегантной бороды" class="header__logo_size"></a>
       <ul class="items_style items_position">
         <li class="items_font-style">юмор</li>
         <li class="items_font-style">настроение</li>
     </ul>
     </header>
-    <main class="joke_position">
-      <div class="joke_size joke__text_position">
-        <p class="joke_font-style joke__text_size" id="jokes">Кликни кнопку "обновить" чтобы начать</p>
-        <button id="btn" class="joke__btn_style"><img src="img/Reload.svg" alt="" class="joke__btn_size joke__btn_position"></button>
-      </div>
+    <main class="main_position">
+      <h1 class="visually_hidden">Здесь только юмор и старые, добрые, бородатые шутки и анекдоты</h1>
+      <article class="joke_size joke__text_position">
+        <h3 class="visually_hidden">Анекдоты, анекдоты и еще раз анекдоты</h3>
+        <p class="joke_font-style joke__text_size" id="jokes">Заходи старый. Здесь тебя ждет ностальгия по шуткам твоей молодости. Кликай кнопку внизу и помчались...</p>
+        <button id="btn" class="joke__btn_style" type="button" aria-label="reload"><img src="img/Reload.svg" id="btn-img" alt="кнопка перезагрузки" class="joke__btn_size joke__btn_position"></button>
+      </article>
     </main>
     <footer class="footer">
-      <ul class="developer_style developer_position">
+      <ul class="developer_style developer_position" itemscope itemtype="https://schema.org/LocalBusiness">
         <li>
-          <p class="developer__sign_font-style developer__sign_size">Created by <a href="https://victory.net.ua" target="_blank" class="developer__sign_link-style">Victory</a> in Ukraine</p>
+          <p class="developer__sign_font-style developer__sign_size">Created by <a href="https://victory.net.ua" rel="noopener noreferrer" target="_blank" aria-label="Ссылка на сайт разработчика" itemprop="name" class="developer__sign_link-style">Victory</a> in Ukraine</p>
         </li>
         <li>
-          <a href="https://victory.net.ua" target="_blank">
-            <img src="img/logo-victory.svg" alt="Логотип разработчика сайта в виде латинской буквы V" class="developer__logo_size">
+          <a href="https://victory.net.ua" rel="noopener noreferrer" target="_blank" aria-label="Ссылка на сайт разработчика" itemprop="url">
+            <img src="img/logo-victory.svg" itemprop="logo image" alt="Логотип разработчика сайта в виде латинской буквы V" class="developer__logo_size">
           </a>
         </li>
       </ul>
     </footer>
-    <script src="js/scrambler.min.js"></script>
-    <script src="js/index.min.js"></script>
+    <script async src="js/scrambler.min.js"></script>
+    <script async src="js/index.min.js"></script>
   </body>
 </html>

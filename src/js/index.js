@@ -53,20 +53,26 @@ function shuffle(arr){
 }
 
 // Передача шутку в скрамблер
-function start() {
-  var joke = jokeChoice();
-    Scrambler({
-      target: '#jokes',
-      random: [500, 1700],
-      speed: 135,
-      text: joke,
-    });
-    i++;
-}
+// function start() {
+//   var joke = jokeChoice();
+//     Scrambler({
+//       target: '#jokes',
+//       random: [500, 1700],
+//       speed: 135,
+//       text: joke,
+//     });
+//     i++;
+// };
+//
+//
 
 // Запуск и кнопка
-document.getElementById('btn').onclick = function() {
-  clearInterval(time);
-  time = setInterval(start, 8000);
-  start();
-};
+// document.getElementById('btn').onclick = function() {
+//   clearInterval(time);
+//   time = setInterval(start, 8000);
+//   document.getElementById('btn-img').classList.add('joke__btn_animation');
+//   start();
+//   document.getElementById('btn-img').addEventListener('animationend', () => {
+//     document.getElementById('btn-img').classList.remove('joke__btn_animation');
+//   });
+// };
