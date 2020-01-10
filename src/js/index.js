@@ -1,71 +1,72 @@
-(function(){
 'use strict';
-}).call(this)
 
-var max;
+var max,
+    i = 0,
+    time,
+    jokesData = {};
 
 // Получить доступ к json
-var address = 'localhost:3000/newj.json';
+var address = 'http://localhost:3000/newj.json';
 var request = new XMLHttpRequest();
-request.open('GET', address);
+request.open('GET', address, true);
 request.responseType = 'json';
 request.send();
 
 // Загрузить шутку из json в переменную
-var jokesData = {};
 request.onload = function() {
    jokesData = request.response;
    max = jokesData.length;
+   shuffle(jokesData);
 }
 
-// Текущая шутка
-function currentJoke() {
-  var current = document.getElementById('jokes').textContent;
-  return current;
-}
-
-// Случайно выбрать шутку
-  var replay = new Array();
-
-  var rnd;
-function rand() {
-rnd = __vIntBaseRng(0, max);
-  if (replay.length == max) {
-    replay.length = 0;
-    // console.log('обнулил массив');
-  } else
-  if (replay[replay.indexOf(rnd)]) {
-    // console.log('вызвал еще раз');
-    rand();
+// Выбрать случайную шутку
+function jokeChoice() {
+  if (i == max) {
+    i = 0;
+    shuffle(jokesData);
   } else {
-    replay.push(rnd);
-    return rnd;
+      return jokesData[i];
   }
 }
 
-function __vIntBaseRng(min, max) {
-  if (min != undefined && max != undefined) return Math.floor(Math.random() * (max - min)) + min;
-  else return Math.random();
-};
-
-function jokeChoice() {
-  return jokesData[rand()];
+// Функция слуйчайных перестановок Фишера-Йетса
+function putToCache(elem, cache){
+  if(cache.indexOf(elem) != -1){
+    return;
+  }
+  var i = Math.floor(Math.random()*(cache.length + 1));
+  cache.splice(i, 0, elem);
+}
+//функция, возвращающая компаратор
+function madness(){
+  var cache = [];
+  return function(a, b){
+    putToCache(a, cache);
+    putToCache(b, cache);
+    return cache.indexOf(b) - cache.indexOf(a);
+  }
+}
+//собственно функция перемешивания
+function shuffle(arr){
+  var compare = madness();
+  return arr.sort(compare);
 }
 
-// Передать шутку в скрамблер
+// Передача шутку в скрамблер
 function start() {
- var joke = jokeChoice();
+  var joke = jokeChoice();
     Scrambler({
       target: '#jokes',
       random: [500, 1700],
       speed: 135,
       text: joke,
     });
+    i++;
 }
 
-
-var time = setInterval(start, 8000);
-
-
-document.getElementById('btn').onclick = start;
-
+// Запуск и кнопка
+document.getElementById('btn').onclick = function() {
+  clearInterval(time);
+  time = setInterval(start, 8000);
+  start();
+};
