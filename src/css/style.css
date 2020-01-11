@@ -61,8 +61,8 @@
 }
 
 .joke__btn_size {
-  width: 29.03px;
-  height: 32px;
+  height: 40px;
+  width: 40px;
 }
 
 .joke__btn_animation {
@@ -90,6 +90,10 @@
 .joke__btn_style:focus {
   outline: none;
   outline-offset: none;
+}
+
+.joke__btn_style:hover {
+  cursor: pointer;
 }
 
 .joke__text_position {
@@ -159,6 +163,11 @@
   .header_style, .main_position {
     display: none;
   }
+  .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
   .footer::before {
     width: 100%;
     position: absolute;
@@ -179,6 +188,11 @@
   .header_style, .main_position {
     display: none;
   }
+  .footer {
+  /*position: absolute;*/
+  bottom: 0;
+  width: 100%;
+}
   .footer::before {
     width: 100%;
     position: absolute;
@@ -231,6 +245,41 @@
   }
 
   .joke__btn_position {
-    margin: 24px 0 0;
+    margin: 16px 0 0;
   }
 }
+
+/*@media only screen and (min-width:1000px) {
+  .body_size {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.main_position {
+  height: 332px;
+}
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

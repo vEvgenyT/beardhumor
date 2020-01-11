@@ -6,7 +6,7 @@ var max,
     jokesData = {};
 
 // Получить доступ к json
-var address = 'http://localhost:3000/newj.json';
+var address = 'http://localhost:3000/joke.json';
 var request = new XMLHttpRequest();
 request.open('GET', address, true);
 request.responseType = 'json';
@@ -66,13 +66,13 @@ function shuffle(arr){
 //
 //
 
-// Запуск и кнопка
-// document.getElementById('btn').onclick = function() {
-//   clearInterval(time);
-//   time = setInterval(start, 8000);
-//   document.getElementById('btn-img').classList.add('joke__btn_animation');
-//   start();
-//   document.getElementById('btn-img').addEventListener('animationend', () => {
-//     document.getElementById('btn-img').classList.remove('joke__btn_animation');
-//   });
-// };
+Запуск и кнопка
+document.getElementById('btn').onclick = function() {
+  clearInterval(time);
+  time = setInterval(start, 8000);
+  document.getElementById('btn-img').classList.add('joke__btn_animation');
+  start();
+  document.getElementById('btn-img').addEventListener('animationend', () => {
+    document.getElementById('btn-img').classList.remove('joke__btn_animation');
+  });
+};
